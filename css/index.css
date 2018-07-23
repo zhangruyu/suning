@@ -2,7 +2,7 @@
 * @Author: lenovo
 * @Date:   2018-05-14 20:38:16
 * @Last Modified by:   lenovo
-* @Last Modified time: 2018-07-21 14:17:37
+* @Last Modified time: 2018-07-23 17:46:02
 */
 *{
 	margin: 0;
@@ -339,7 +339,7 @@ body{
 .bigbox{
 	width: 100%;
 	height: 440px;
-	background-color: #FEBDC5;
+	background-color: #F19CC5;
 }
 .bigbox .con{
 	width: 1190px;
@@ -520,6 +520,7 @@ body{
 	position: absolute;
 	left: 0;
 	top: 0;
+	z-index: 5;
 }
 .bigbox .con .mid .small1{
 	display: block;
@@ -617,7 +618,7 @@ body{
 	float: left;
 	transition: all 0.2s;
 }
-.bigbox .con .mid .btns .btn:hover{
+.bigbox .con .mid .btns .hot{
 	background-color: #f60;
 	border: 2px solid #CDB7BB;
 }
