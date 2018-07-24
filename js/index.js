@@ -76,4 +76,24 @@ window.onload=function(){
 	pre.onclick=function(){
 		move1();
 	}
+
+	for (let i=0;i<btn.length;i++){
+		btn[i].onclick=function(){
+			if (i==1){bigbox.style.background="#D02247";}
+			if (i==2){bigbox.style.background="#47FFF2";}
+			if (i==3){bigbox.style.background="#D4F1EF";}
+			if (i==4){bigbox.style.background="#1F2120";}
+			if (i==5){bigbox.style.background="#D8D8D8";}
+			if (i==6){bigbox.style.background="#FB3570";}
+			if (i==7){bigbox.style.background="#FFBEC8";}
+
+			for(let j=0;j<imgbox.length;j++){
+				imgbox[j].style.zIndex=5;
+				btn[j].className="btn";
+			}
+			imgbox[i].style.zIndex=10;
+			btn[i].className="btn hot";
+			num=i;
+		}
+	}
 }
