@@ -96,4 +96,183 @@ window.onload=function(){
 			num=i;
 		}
 	}
+
+
+	// 楼层跳转
+	let H=innerHeight;
+	let CON=document.querySelectorAll(".CON");
+	let floor=document.querySelector(".floor .con");
+	let cons=floor.querySelectorAll(".box");
+	let TOP=floor.querySelector(".top");
+	let flg=true;
+	let arr=[];
+	CON.forEach(function(v){
+		arr.push(v.offsetTop);
+	})
+
+	window.onscroll=function(){
+		let st=document.body.scrollTop||document.documentElement.scrollTop;
+		arr.forEach(function(element,i){
+			if (st+H>=arr[0]){
+				floor.style.display="block";
+			}
+			else{
+				floor.style.display="none";
+			}
+			if (st+H>element+200){
+				if(flg){
+					cons.forEach(function(v){
+						v.classList.remove("hot6");
+					})
+					cons[i].classList.add("hot6");
+				}
+				if(!flg && i!=Now){
+					cons[i].classList.remove("hot6");
+				}
+			}
+		})
+	}
+
+	let Now=0;
+	cons.forEach(function(v,i){
+		v.onclick=function(){
+			animate(document.body,{scrollTop:arr[i]});
+			animate(document.documentElement,{scrollTop:arr[i]});
+			Now=i;
+			flg=false;
+			v.classList.add("hot6");
+		}
+	})
+	TOP.onclick=function(){
+			animate(document.body,{scrollTop:0});
+			animate(document.documentElement,{scrollTop:0});
+	}
+
+
+	//头部导航
+	let nav1=document.querySelectorAll(".nav .con .navs1");
+	console.log(nav1);
+	nav1.forEach(function(v,i){
+		let cons2;
+		if(i!=2){
+			cons2=v.querySelector(".box")
+			console.log(cons2)
+		}
+		else{
+			cons2=v.querySelector(".box3")
+			console.log(cons2)
+		}
+		v.onmouseenter=function(){
+			v.style.overflow="";
+			cons2.style.display="block";
+		}
+		v.onmouseleave=function(){
+			v.style.overflow="hidden";
+			cons2.style.display="none";
+		}
+	})
+	let nav2=document.querySelectorAll(".nav .con .nav2");
+	nav2.forEach(function(v){
+		let cons2=v.querySelector(".box")
+		v.onmouseenter=function(){
+			v.style.overflow="";
+			cons2.style.display="block";
+
+		}
+		v.onmouseleave=function(){
+			v.style.overflow="hidden";
+			cons2.style.display="none";
+		}
+	})
+
+
+	//评论
+	let pinglun=document.querySelectorAll(".bigbox .con .rights .pinglun .box");
+	let q=setInterval(move5,3000);
+	let now1=0;
+	let next1=0;
+	function move5(){
+		next1++;
+		if(next1==pinglun.length){
+			next1=0;
+		}
+		pinglun[next1].style.top=115+"px";
+		animate(pinglun[now1],{top:-115});
+		animate(pinglun[next1],{top:0});
+		now1=next1;
+	}
+
+	//排行榜轮播图
+	let cons1=document.querySelectorAll(".first .three .con .cons");
+	let left1=document.querySelector(".first .three .con .fanye");
+	let right1=document.querySelector(".first .three .con .fanye1");
+	let btns1=document.querySelectorAll(".first .three .btn");
+	let flg1=true;
+	// let r=setInterval(move6,2000);
+	let now2=0;
+	let next2=0;
+	function move6(){
+		next2++;
+		if(next2==cons1.length){
+			next2=0;
+		}
+		btns1.forEach(function(e){
+			e.classList.remove("hot8");
+		})
+		btns1[next2].classList.add("hot8");
+		cons1[next2].style.left=379+"px";
+		animate(cons1[now2],{left:-379});
+		animate(cons1[next2],{left:0},function(){
+			flg1=true;
+		});
+		now2=next2;
+	}
+	function move7(){
+		next2--;
+		if(next2<0){
+			next2=cons1.length-1;
+		}
+		btns1.forEach(function(e){
+			e.classList.remove("hot8");
+		})
+		btns1[next2].classList.add("hot8");
+		cons1[next2].style.left=-379+"px";
+		animate(cons1[now2],{left:379});
+		animate(cons1[next2],{left:0},function(){
+			flg1=true;
+		});
+		now2=next2;
+	}
+	right1.onclick=function(){
+		if(!flg1){
+			return;
+		}
+		flg1=false;
+		move6();
+	}
+	left1.onclick=function(){
+		if(!flg1){
+			return;
+		}
+		flg1=false;
+		move7();
+	}
+
+	btns1.forEach(function(e,i){
+		e.onmouseenter=function(){
+			
+			if(i>now2){
+				next2=i-1;
+				move6();
+			}
+			if(i<now2){
+				next2=i+1;
+				move7();
+			}
+			if(i==now2){
+				return;
+			}
+
+		}
+	})
 }
