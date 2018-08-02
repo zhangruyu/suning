@@ -65,6 +65,8 @@ body{
 	width: 65px;
 	height: 34px;
 	padding: 0 10px;
+	box-sizing: border-box;
+	border: 1px solid #f5f5f5;
 	color: #666;
 	float: left;
 	font-size: 12px;
@@ -118,6 +120,7 @@ body{
 	margin-bottom: 10px;
 	font-size: 14px;
 	color: #333;
+	box-sizing: border-box;
 }
 .nav .con a{
 	display: block;
@@ -159,7 +162,7 @@ body{
 }
 .nav .con .nav1 .box3::after{
 	content: "";
-	width: 84px;
+	width: 82px;
 	height: 1px;
 	background-color: #fff;
 	position: absolute;
@@ -168,13 +171,13 @@ body{
 }
 .nav .con .nav1 .box::after{
 	content: "";
-	width: 84px;
+	width: 83px;
 	height: 1px;
 	background-color: #fff;
 	position: absolute;
 	top: -1px;
 	left: 0;
-	z-index: 80;
+	/* z-index: 80; */
 }
 .nav .con .nav1 .iconfont{
 	width: 10px;
@@ -211,10 +214,12 @@ body{
 	transform: rotate(0deg);
 }
 .nav .con .nav2{
-	width: auto;
+	width: 84px;
 	height: 35px;
 	padding: 0 10px;
-	margin: 2px 3px 2px 3px;
+	box-sizing: border-box;
+	border: 1px solid #f5f5f5;
+	/* margin: 2px 3px 2px 3px; */
 	color: #666;
 	float: right;
 	font-size: 12px;
@@ -228,7 +233,7 @@ body{
 	border: 1px solid #ddd;
 }
 .nav .con .nav2 .box4{
-	width: 81px;
+	width: 82px;
 	height: 0;
 	position: absolute;
 	top: 33px;
@@ -240,7 +245,7 @@ body{
 }
 .nav .con .nav2 .box4::after{
 	content: "";
-	width: 81px;
+	width: 82px;
 	height: 1px;
 	background-color: #fff;
 	position: absolute;
@@ -338,7 +343,7 @@ body{
 }
 .nav .con .nav2 .box5::after{
 	content: "";
-	width: 81px;
+	width: 82px;
 	height: 1px;
 	background-color: #fff;
 	position: absolute;
@@ -386,7 +391,7 @@ body{
 }
 .nav .con .nav2 .box7::after{
 	content: "";
-	width: 81px;
+	width: 82px;
 	height: 1px;
 	background-color: #fff;
 	position: absolute;
@@ -394,18 +399,21 @@ body{
 	right: 0;
 }
 .nav .con .nav3{
-	width: 83px;
+	width: 84px;
 	height: 35px;
+	border: 1px solid #f5f5f5;
 	box-sizing: border-box;
 }
 .nav .con .nav4{
 	width: 98px;
 	height: 35px;
+	border: 1px solid #f5f5f5;
 	box-sizing: border-box;
 }
 .nav .con .navs1{
-	width: 83px;
+	width: 84px;
 	height: 35px;
+	border: 1px solid #f5f5f5;
 	position: relative;
 	box-sizing: border-box;
 }
@@ -416,6 +424,11 @@ body{
 	margin-top: 0;
 	border: 1px solid #ddd;
 	border-bottom: 0;
+	box-sizing: border-box;
+	/* line-height: 34px; */
+}
+.nav .con .nav2:hover{
+	box-sizing: border-box;
 }
 .nav .con .nav3:hover{
 	background-color: #fff;
@@ -424,6 +437,7 @@ body{
 	margin-top: 0;
 	border: 1px solid #ddd;
 	border-bottom: 0;
+	box-sizing: border-box;
 }
 .nav .con .nav4:hover{
 	background-color: #fff;
@@ -432,6 +446,7 @@ body{
 	margin-top: 0;
 	border: 1px solid #ddd;
 	border-bottom: 0;
+	box-sizing: border-box;
 }
 .nav .con .nav1 .box::after{
 	content: "";
