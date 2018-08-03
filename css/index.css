@@ -3397,6 +3397,14 @@ body{
 	height: 25px;
 	margin-top: 5px;
 	text-align: center;
+	display: flex;
+	justify-content: center;
+}
+.ng-authentication a{
+	display: block;
+	width: 76px;
+	height: 24px;
+	margin: 0 5px;
 }
 .ng-authentication img{
 	width: 76px;
