@@ -38,6 +38,7 @@ window.onload=function(){
 		if(num==imgbox.length){
 			num=0;
 		}
+		if (num==0){bigbox.style.background="#F19CC5";}
 		for(let i=0;i<imgbox.length;i++){
 			imgbox[i].style.zIndex=5;
 			btn[i].className="btn";
@@ -47,6 +48,7 @@ window.onload=function(){
 	}
 	function move1(){
 		num--;
+		if (num==0){bigbox.style.background="#F19CC5";}
 		if (num==1){bigbox.style.background="#D02247";}
 		if (num==2){bigbox.style.background="#47FFF2";}
 		if (num==3){bigbox.style.background="#D4F1EF";}
@@ -79,6 +81,7 @@ window.onload=function(){
 
 	for (let i=0;i<btn.length;i++){
 		btn[i].onclick=function(){
+			if (i==0){bigbox.style.background="#F19CC5";}
 			if (i==1){bigbox.style.background="#D02247";}
 			if (i==2){bigbox.style.background="#47FFF2";}
 			if (i==3){bigbox.style.background="#D4F1EF";}
