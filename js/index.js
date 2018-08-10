@@ -24,21 +24,21 @@ window.onload=function(){
 	let pre=con.getElementsByClassName("fanye")[0];
 	let btn=con.getElementsByClassName("btn");
 	let num=0;
-
+	let arr4=["#F19CC5","#D02247","#47FFF2","#D4F1EF","#1F2120","#D8D8D8","#FB3570","#FFBEC8"]
 	let t=setInterval(move,2000);
 	function move(){
 		num++;
-		if (num==1){bigbox.style.background="#D02247";}
+		/*if (num==1){bigbox.style.background="#D02247";}
 		if (num==2){bigbox.style.background="#47FFF2";}
 		if (num==3){bigbox.style.background="#D4F1EF";}
 		if (num==4){bigbox.style.background="#1F2120";}
 		if (num==5){bigbox.style.background="#D8D8D8";}
 		if (num==6){bigbox.style.background="#FB3570";}
-		if (num==7){bigbox.style.background="#FFBEC8";}
+		if (num==7){bigbox.style.background="#FFBEC8";}*/
 		if(num==imgbox.length){
 			num=0;
 		}
-		if (num==0){bigbox.style.background="#F19CC5";}
+		bigbox.style.background=arr4[num];
 		for(let i=0;i<imgbox.length;i++){
 			imgbox[i].style.zIndex=5;
 			btn[i].className="btn";
@@ -48,17 +48,18 @@ window.onload=function(){
 	}
 	function move1(){
 		num--;
-		if (num==0){bigbox.style.background="#F19CC5";}
+		/*if (num==0){bigbox.style.background="#F19CC5";}
 		if (num==1){bigbox.style.background="#D02247";}
 		if (num==2){bigbox.style.background="#47FFF2";}
 		if (num==3){bigbox.style.background="#D4F1EF";}
 		if (num==4){bigbox.style.background="#1F2120";}
 		if (num==5){bigbox.style.background="#D8D8D8";}
 		if (num==6){bigbox.style.background="#FB3570";}
-		if (num==7){bigbox.style.background="#FFBEC8";}
+		if (num==7){bigbox.style.background="#FFBEC8";}*/
 		if(num<0){
 			num=imgbox.length-1;
 		}
+		bigbox.style.background=arr4[num];
 		for(let i=0;i<imgbox.length;i++){
 			imgbox[i].style.zIndex=5;
 			btn[i].className="btn";
@@ -81,15 +82,15 @@ window.onload=function(){
 
 	for (let i=0;i<btn.length;i++){
 		btn[i].onclick=function(){
-			if (i==0){bigbox.style.background="#F19CC5";}
+			/*if (i==0){bigbox.style.background="#F19CC5";}
 			if (i==1){bigbox.style.background="#D02247";}
 			if (i==2){bigbox.style.background="#47FFF2";}
 			if (i==3){bigbox.style.background="#D4F1EF";}
 			if (i==4){bigbox.style.background="#1F2120";}
 			if (i==5){bigbox.style.background="#D8D8D8";}
 			if (i==6){bigbox.style.background="#FB3570";}
-			if (i==7){bigbox.style.background="#FFBEC8";}
-
+			if (i==7){bigbox.style.background="#FFBEC8";}*/
+			bigbox.style.background=arr4[i];
 			for(let j=0;j<imgbox.length;j++){
 				imgbox[j].style.zIndex=5;
 				btn[j].className="btn";
